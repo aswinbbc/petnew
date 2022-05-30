@@ -127,15 +127,35 @@ $query=mysqli_query($conn,"SELECT * FROM pet_tb");
                                             <tbody>
                                                 <tr>
                                                 <td><?php echo $row['owner_name'];?><br>
+
                                                 Mob :<?php echo $row['mobile'];?><br>
-                                                <?php echo $row['address'];?><br>
+
+                                                Place:<?php echo $row['address'];?><br>
+
+                                                Category :<?php echo $row['category'];?><br>
+
+                                                Breed :<?php echo $row['breed'];?><br>
+
+                                                Age:<?php echo $row['age'];?><br>
+
+                                                Colour:<?php echo $row['colour'];?><br>
+
+                                                Sex:<?php echo $row['sex'];?><br>
+
+                                                Title :<?php echo $row['title'];?><br>
+
+                                                Information:<?php echo $row['information'];?><br>
+
                                                 Price :<?php echo $row['price'];?><br>
+                                               
                                                 <?php if($row['status'] == 'Pending'){?>
                                                        <b style="color:green" ><?php echo $row['status'];?></b>
                                                        <?php } 
                                                        else{?><b style="color:red" ><?php echo $row['status'];?></b>
-                                                       <?php } ?> </td>
-                                                <td><img src="images/gallery/<?php echo $row['image']; ?>" height="130px" width="160px"></td>
+                                                       <?php } ?>
+                                                 </td>
+                                                <td><img src="images/gallery/<?php echo $row['image']; ?>" height="130px" width="160px"><br>
+                                            </td>
                                                 </tr>
                                             </tbody>
                                             <?php

@@ -12,6 +12,10 @@ if(isset($_POST['subm']))
     $mob=$_POST['mobile'];
     $pin=$_POST['pin'];
     $category=$_POST['category'];
+    $breed=$_POST['breed'];
+    $age=$_POST['age'];
+    $sex=$_POST['sex'];
+    $color=$_POST['color'];
     $title=$_POST['title'];
     $info=$_POST['info'];
     $price=$_POST['price'];
@@ -29,7 +33,7 @@ if(isset($_POST['subm']))
 
 		  }
     
-    mysqli_query($conn,"INSERT INTO pet_tb(owner_name,address,mobile,pincode,category,title,information,price,image,login_id) VALUES ('$name','$address','$mob','$pin','$category','$title','$info','$price','$filenew','$id')");
+    mysqli_query($conn,"INSERT INTO pet_tb(owner_name,address,mobile,pincode,category,breed,age,sex,colour,title,information,price,image,login_id) VALUES ('$name','$address','$mob','$pin','$category','$breed','$age','$sex','$color','$title','$info','$price','$filenew','$id')");
     	
 		header('location:index.php');
 }
@@ -158,21 +162,43 @@ if(isset($_POST['subm']))
                                                         <input class="form-control" type="text" placeholder="Pincode" name="pin" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Pet Ctegory</label>
-                                                        <input class="form-control" type="text" placeholder="Ctegory" name="category" required>
+                                                        <label>Pet Ctegory</label><br>
+                                                        <select name="category">
+                                                            <option value="">SELECT</option>
+                                                            <option value="Dog">DOG</option>
+                                                            <option value="Cat">CAT</option>
+                                                            <option value="Bird">BIRD</option>
+                                                        </select>
+                                                    </div> 
+                                                                                                                                                  
+                                                    <div class="form-group">
+                                                        <label>Breed</label>
+                                                        <input class="form-control" type="text" placeholder="text" name="breed" required>
                                                     </div>
-                                                   
                                                     
-                                                                                                                                                          
-                                                </div>
-                                                <div class="col-lg-6">
                                                 <div class="form-group">
-                                                        <label>Add Title</label>
+                                                        <label>Age</label>
+                                                        <input class="form-control" type="text" placeholder="text" name="age" required>
+                                                    </div>
+                                                    </div>     
+                                                    <div class="col-lg-6">
+                                                <div class="form-group">
+                                                        <label>Sex</label><br> 
+                                                        <input  type="radio" name="sex" value="Male">Male
+                                                        <input  type="radio" name="sex" value="Female">Female
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label>Color</label>
+                                                        <input class="form-control" type="text" placeholder="text" name="color" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Title</label>
                                                         <input class="form-control" type="text" placeholder="text" name="title" required>
                                                     </div>
-                                                <div class="form-group">
-                                                        <label>Additional Information</label>
-                                                        <textarea class="form-control" rows="4" placeholder="Say Something.." name="info" required></textarea>
+                                                    <div class="form-group">
+                                                        <label>Information</label>
+                                                        <textarea class="form-control" type="text" placeholder="text" name="info" required></textarea>
                                                     </div>
                                                 <div class="form-group">
                                                         <label>Price</label>
@@ -188,17 +214,7 @@ if(isset($_POST['subm']))
                                                 </div>
                                             </div>
 
-                                                    <!-- <div class="form-group">
-                                                        <label>Input Select</label>
-                                                        <select class="form-control">
-															<option>1</option>
-															<option>2</option>
-															<option>3</option>
-															<option>4</option>
-															<option>5</option>
-														</select>
-                                                    </div>
-                                                    -->
+                
                                                 </div>
                                             </div>
                                         </form>
